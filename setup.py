@@ -9,4 +9,5 @@ setup(name='deflateBR',
       author_email='neylsoncrepalde@gmail.com',
       license='MIT',
       packages=['deflatebr'],
-      zip_safe=False)
+      zip_safe=False,
+      python_requires='>=3.6')
