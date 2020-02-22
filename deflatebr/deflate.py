@@ -3,7 +3,8 @@ import json
 import pandas as pd
 import numpy as np
 from io import StringIO
-from deflatebr.utils import clean_real_date
+from datetime import date
+from deflatebr.utils import clean_real_date, round_date_to_month
 
 def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
     """
@@ -12,9 +13,9 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
 
     Parameters
     ----------
-    nominal_values : [np.array or pd.Series]
+    nominal_values : [int, float, np.array or pd.Series]
         An array containing nominal Brazilian Reais to deflate.
-    nominal_dates : [str or date]
+    nominal_dates : [str, date or list]
         A date vector with corresponding nominal dates (i.e., when nominal values were measured).
         Values are set to the previous month, following the
         standard methodology used by the Brazilian Central Bank
@@ -29,10 +30,20 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
     
     """
     # Prepare inputs
-    if isinstance(nominal_dates, str):
-        nominal_dates = [nominal_dates]
     nominal_values = np.array(nominal_values)
     real_date = clean_real_date(real_date)
+
+    # If it is just one value, turn into a list
+    if isinstance(nominal_dates, str):
+        nominal_dates = [pd.to_datetime(nominal_dates)]
+    elif isinstance(nominal_dates, date):
+        nominal_dates = [nominal_dates]
+
+    if len(nominal_dates) > 1:
+        nominal_dates = pd.to_datetime(nominal_dates)
+    
+    # Round dates to first of each month
+    nominal_dates = [round_date_to_month(dt) for dt in nominal_dates]    
 
     # Request to IPEA API
     if index == 'ipca':
