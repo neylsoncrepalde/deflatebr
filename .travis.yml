@@ -10,6 +10,6 @@ install:
   - pip install .
 script: tox
 after_success:
-  - coverage run -m nose
+  - coverage run -m pytest
   - coverage report -m
   - coveralls
