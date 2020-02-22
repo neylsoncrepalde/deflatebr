@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from io import StringIO
 from datetime import date
-from deflatebr.utils import clean_real_date, round_date_to_month
+from .utils import clean_real_date, round_date_to_month
 
 def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
     """
