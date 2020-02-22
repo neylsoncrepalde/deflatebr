@@ -10,5 +10,6 @@ install:
   - pip install .
 script: tox
 after_success:
-  - pytest --cov-report term --cov=deflatebr
+  - coverage run -m nose
+  - coverage report -m
   - coveralls
