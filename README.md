@@ -29,7 +29,7 @@ import deflatebr as dbr
 dbr.deflate(nominal_values=100, nominal_dates='2015-01-01', 
             real_date='2020-01')
 ```
-    array([129.71193616])
+    array([131.32029183])
 
 To deflate a bigger series, do
 
@@ -51,7 +51,7 @@ df
 dbr.deflate(nominal_values=df.nom_values, nominal_dates=df.dates, 
             real_date='2020-01')
 ```
-    array([129.71193616, 256.29732185, 363.01501379, 474.62437433])
+    array([131.32029183, 259.42387232, 365.99132289, 479.18030761])
 
 
 Behind the scenes, `deflateBR` requests data from
@@ -75,7 +75,7 @@ following options to the `index =` argument: `ipca`, `igpm`, `igpdi`,
 dbr.deflate(nominal_values=100, nominal_dates='2015-01-01', 
             real_date='2020-01', index='inpc')
 ```
-    array([129.15456378])
+    array([131.06584509])
 
 
 Methodology
@@ -94,6 +94,7 @@ adjusted Reais). The `deflate` function gives exactly the same result:
 ```python
 dbr.deflate(100,"2018-01-01", "2018-08", "ipca")
 ```
+    array([102.84961131])
 
 Authors
 ------

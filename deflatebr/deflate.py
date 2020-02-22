@@ -42,7 +42,7 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
     if len(nominal_dates) > 1:
         nominal_dates = pd.to_datetime(nominal_dates)
     
-    # Round dates to first of each month
+    # Round dates to first of each month and get one month earlier
     nominal_dates = [round_date_to_month(dt) for dt in nominal_dates]    
 
     # Request to IPEA API
