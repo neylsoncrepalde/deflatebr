@@ -1,14 +1,17 @@
 deflateBR
 =========
 
+[![PyPi version](https://pypip.in/v/deflateBR/badge.png)](https://crate.io/packages/deflateBR/)
 [![Build Status](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/neylsoncrepalde/deflatebr/badge.svg?branch=master)](https://coveralls.io/github/neylsoncrepalde/deflatebr?branch=master)
+
+[![PyPi downloads](https://pypip.in/d/deflateBR/badge.png)](https://crate.io/packages/deflateBR/)
 
 
 
 `deflateBR` is a `Python` package used to deflate nominal Brazilian Reais
 using several popular price indexes. It is a reimplementation of the great
-[`deflateBR` `R` package](https://cran.r-project.org/web/packages/deflateBR/index.html) 
+[deflateBR R package](https://cran.r-project.org/web/packages/deflateBR/index.html) 
 by [Fernando Meireles](https://twitter.com/meirelesff).
 
 Installation
