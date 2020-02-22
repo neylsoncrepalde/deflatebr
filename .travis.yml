@@ -8,6 +8,7 @@ before_install:
   - pip install tox
 install: 
   - pip install .
+script: tox
 after_success:
   - coverage run --source=tox
   - coveralls
