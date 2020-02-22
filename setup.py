@@ -12,7 +12,6 @@ setup(name='deflateBR',
       zip_safe=False,
       install_requires=[
           'requests',
-          'json',
           'pandas',
           'numpy',
           'datetime'
