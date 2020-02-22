@@ -29,4 +29,6 @@ setup(name='deflateBR',
           'numpy',
           'datetime'
       ],
-      python_requires='>=3.6')
+      test_suite='nose.collector',
+      tests_require=['nose'],
+      python_requires='>=3.7')

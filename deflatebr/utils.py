@@ -15,3 +15,4 @@ def clean_real_date(real_date):
 def round_date_to_month(dt:datetime):
     dt = str( ( dt.replace(day=1).date() - timedelta(days=1) ).replace(day=1) )
     return dt
+

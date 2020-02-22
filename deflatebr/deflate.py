@@ -27,6 +27,9 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
         Indicates the price index used to deflate nominal Reais. 
         Valid options are: 'ipca', 'igpm,'igpdi', 'ipc', and 'inpc'.
 
+    Returns
+    -------
+    np.ndarray : an array of deflated values.
     
     """
     # Prepare inputs
@@ -43,7 +46,11 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
         nominal_dates = pd.to_datetime(nominal_dates)
     
     # Round dates to first of each month and get one month earlier
-    nominal_dates = [round_date_to_month(dt) for dt in nominal_dates]    
+    nominal_dates = [round_date_to_month(dt) for dt in nominal_dates]
+
+    # Test index input
+    if index not in ['ipca', 'igpm', 'igpdi', 'ipc', 'inpc']:
+        raise Exception("index must be one of 'ipca', 'igpm', 'igpdi', 'ipc', 'inpc'")
 
     # Request to IPEA API
     if index == 'ipca':
