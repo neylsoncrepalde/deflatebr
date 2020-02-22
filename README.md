@@ -1,6 +1,11 @@
 deflateBR
 =========
 
+[![Build Status](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/neylsoncrepalde/deflatebr/badge.svg?branch=master)](https://coveralls.io/github/neylsoncrepalde/deflatebr?branch=master)
+
+
+
 `deflateBR` is a `Python` package used to deflate nominal Brazilian Reais
 using several popular price indexes. It is a reimplementation of the great
 [`deflateBR` `R` package](https://cran.r-project.org/web/packages/deflateBR/index.html) 
