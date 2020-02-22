@@ -10,4 +10,11 @@ setup(name='deflateBR',
       license='MIT',
       packages=['deflatebr'],
       zip_safe=False,
+      install_requires=[
+          'requests',
+          'json',
+          'pandas',
+          'numpy',
+          'datetime'
+      ],
       python_requires='>=3.6')
