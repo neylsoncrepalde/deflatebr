@@ -2,7 +2,7 @@ deflateBR
 =========
 
 [![Build Status](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
-[![codecov](https://codecov.io/gh/neylsoncrepalde/deflatebr/branch/master/graph/badge.svg)](https://codecov.io/gh/neylsoncrepalde/deflatebr)
+[![Coverage Status](https://coveralls.io/repos/github/neylsoncrepalde/deflatebr/badge.svg?branch=master)](https://coveralls.io/github/neylsoncrepalde/deflatebr?branch=master)
 
 
 
