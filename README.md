@@ -2,6 +2,7 @@ deflateBR
 =========
 
 [![PyPi version](https://pypip.in/v/deflateBR/badge.png)](https://crate.io/packages/deflateBR/)
+[![Build Status](https://dev.azure.com/neylsoncrepalde/deflateBR/_apis/build/status/neylsoncrepalde.deflatebr?branchName=master)](https://dev.azure.com/neylsoncrepalde/deflateBR/_build/latest?definitionId=1&branchName=master)
 [![Build Status](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/neylsoncrepalde/deflatebr/badge.svg?branch=master)](https://coveralls.io/github/neylsoncrepalde/deflatebr?branch=master)
 
