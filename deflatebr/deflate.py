@@ -26,6 +26,10 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca', progress_bar
     index : str
         Indicates the price index used to deflate nominal Reais. 
         Valid options are: 'ipca', 'igpm,'igpdi', 'ipc', and 'inpc'.
+    progress_bar : bool
+        True to display a progress bar. False by default.
+    on_jupyter : bool
+        True to display an HTML progress bar on jupyter notebook or jupyter lab.
 
     Returns
     -------
@@ -74,6 +78,15 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca', progress_bar
                         'VALDATA': nominal_dates})
 
     df = df.merge(indice[['VALDATA', 'VALVALOR']], how='left', on='VALDATA')
-    df['deflated'] = df[['nom_values', 'VALVALOR']].apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
+
+    if progress_bar:
+        if on_jupyter:
+            from tqdm.notebook import tqdm
+        else:
+            from tqdm import tqdm
+        tqdm.pandas()
+        df['deflated'] = df[['nom_values', 'VALVALOR']].progress_apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
+    else:
+        df['deflated'] = df[['nom_values', 'VALVALOR']].apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
     
     return df.deflated.values
