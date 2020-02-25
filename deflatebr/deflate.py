@@ -82,10 +82,12 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca', progress_bar
     if progress_bar:
         if on_jupyter:
             from tqdm.notebook import tqdm
+            tqdm.pandas()
+            df['deflated'] = df[['nom_values', 'VALVALOR']].progress_apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
         else:
             from tqdm import tqdm
-        tqdm.pandas()
-        df['deflated'] = df[['nom_values', 'VALVALOR']].progress_apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
+            tqdm.pandas()
+            df['deflated'] = df[['nom_values', 'VALVALOR']].progress_apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
     else:
         df['deflated'] = df[['nom_values', 'VALVALOR']].apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
     
