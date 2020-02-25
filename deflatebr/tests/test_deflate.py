@@ -1,7 +1,12 @@
 from unittest import TestCase
 import deflatebr as dbr
 import numpy as np
+import pandas as pd
 from datetime import datetime
+
+test_data = pd.DataFrame({'wage':[1000,1100,1150, 1000, 1200, 1250], 
+                     'nom_dates': ['2018-01-01','2018-01-01','2018-01-01',
+                                   '2018-08-01','2018-08-01','2018-08-01']})
 
 class TestDeflate(TestCase):
 
@@ -79,5 +84,12 @@ class TestDeflate(TestCase):
         self.assertAlmostEqual(
             dbr.deflate(100, '2018-01-15', '2018-08', index='inpc')[0],
             102.82693360196076
+        )
+
+    #Fix issue #1
+    def test_deflate_same_dates(self):
+        self.assertAlmostEqual(
+            dbr.deflate(nominal_dates=test_data.nom_dates, nominal_values=test_data.wage, real_date='2020-01')[2],
+            1247.06252059
         )
     

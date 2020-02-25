@@ -4,7 +4,7 @@ with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='deflateBR',
-      version='0.1',
+      version='0.2',
       description='Deflate Nominal Brazilian Reais',
       long_description=long_description,
       long_description_content_type='text/markdown',
@@ -29,6 +29,4 @@ setup(name='deflateBR',
           'numpy',
           'datetime'
       ],
-      test_suite='nose.collector',
-      tests_require=['nose'],
-      python_requires='>=3.7')
+      python_requires='>=3.6')

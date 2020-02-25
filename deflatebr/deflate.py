@@ -6,7 +6,7 @@ from io import StringIO
 from datetime import date
 from .utils import clean_real_date, round_date_to_month
 
-def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
+def deflate(nominal_values, nominal_dates, real_date, index='ipca', progress_bar=False, on_jupyter=False):
     """
     deflatebr uses data from the Brazilian Institute for Applied Economic 
     Research's API (IPEADATA) to adjust nominal Brazilian Reais for inflation.
@@ -68,7 +68,12 @@ def deflate(nominal_values, nominal_dates, real_date, index='ipca'):
     indice = pd.DataFrame.from_dict(json.load(StringIO(res.text))['value'])
     indice['VALDATA'] = pd.to_datetime(indice['VALDATA'], utc=True).dt.date.astype(str)
         
-    # Calculate changes in prices
-    indice['indx'] = indice.VALVALOR[indice.VALDATA == real_date].values / indice.VALVALOR.values
+    # Calculate changes in values
+    real_indx = indice.loc[indice.VALDATA == real_date,'VALVALOR'].values
+    df = pd.DataFrame({'nom_values': nominal_values,
+                        'VALDATA': nominal_dates})
+
+    df = df.merge(indice[['VALDATA', 'VALVALOR']], how='left', on='VALDATA')
+    df['deflated'] = df[['nom_values', 'VALVALOR']].apply(lambda x: ((real_indx/x[1]) * x[0])[0], axis=1)
     
-    return (indice.loc[indice.VALDATA.isin(nominal_dates),'indx'] * nominal_values).values
+    return df.deflated.values
