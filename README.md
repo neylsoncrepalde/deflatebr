@@ -1,12 +1,19 @@
 deflateBR
 =========
 
-[![PyPi version](https://pypip.in/v/deflateBR/badge.png)](https://crate.io/packages/deflateBR/)
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+[![PyPI version fury.io](https://badge.fury.io/py/deflateBR.svg)](https://pypi.python.org/pypi/deflateBR/)
 [![Build Status Azure](https://dev.azure.com/neylsoncrepalde/deflateBR/_apis/build/status/neylsoncrepalde.deflatebr?branchName=master)](https://dev.azure.com/neylsoncrepalde/deflateBR/_build/latest?definitionId=1&branchName=master)
 [![Build Status Travis](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/neylsoncrepalde/deflatebr/badge.svg?branch=master)](https://coveralls.io/github/neylsoncrepalde/deflatebr?branch=master)
-
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3f38c77f8e5c4d02bbb8befd3cdb9489)](https://www.codacy.com/manual/neylsoncrepalde/deflatebr?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=neylsoncrepalde/deflatebr&amp;utm_campaign=Badge_Grade)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/deflateBR.svg)](https://pypi.python.org/pypi/deflateBR/)
+[![PyPI status](https://img.shields.io/pypi/status/deflateBR.svg)](https://pypi.python.org/pypi/deflateBR/)
 [![PyPi downloads](https://pypip.in/d/deflateBR/badge.png)](https://crate.io/packages/deflateBR/)
+[![GitHub issues](https://img.shields.io/github/issues/neylsoncrepalde/deflatebr.svg)](https://GitHub.com/neylsoncrepalde/deflateBR/issues/)
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/neylsoncrepalde/deflatebr.svg)](https://GitHub.com/neylsoncrepalde/deflatebr/issues?q=is%3Aissue+is%3Aclosed)
 
 
 
@@ -16,14 +23,14 @@ using several popular price indexes. It is a reimplementation of the great
 by [Fernando Meireles](https://twitter.com/meirelesff).
 
 Installation
-============
+------------
 
 ```bash
 pip install deflateBR
 ```
 
 Examples
-========
+--------
 
 The `deflateBR`’s main function, `deflate`, requires three arguments to
 work: an `int` of `float` vector of nominal Reais (`nominal_values`); a `str` or `datetime` vector of corresponding dates (`nominal_dates`); and a reference month in the `YYYY-MM` format (`real_date`), used to deflate the values. An

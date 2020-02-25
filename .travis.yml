@@ -1,5 +1,6 @@
 language: python
 python:
+  - 3.6
   - 3.7
 before_install:
   - python --version
@@ -8,8 +9,7 @@ before_install:
   - pip install tox
 install: 
   - pip install .
-script: tox
+script: coverage run -m pytest
 after_success:
-  - coverage run -m pytest
   - coverage report -m
   - coveralls
