@@ -4,7 +4,7 @@ with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='deflateBR',
-      version='0.2',
+      version='0.2.1',
       description='Deflate Nominal Brazilian Reais',
       long_description=long_description,
       long_description_content_type='text/markdown',
@@ -27,6 +27,7 @@ setup(name='deflateBR',
           'requests',
           'pandas',
           'numpy',
-          'datetime'
+          'datetime',
+          'tqdm'
       ],
       python_requires='>=3.6')

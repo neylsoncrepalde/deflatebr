@@ -2,8 +2,8 @@ deflateBR
 =========
 
 [![PyPi version](https://pypip.in/v/deflateBR/badge.png)](https://crate.io/packages/deflateBR/)
-[![Build Status](https://dev.azure.com/neylsoncrepalde/deflateBR/_apis/build/status/neylsoncrepalde.deflatebr?branchName=master)](https://dev.azure.com/neylsoncrepalde/deflateBR/_build/latest?definitionId=1&branchName=master)
-[![Build Status](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
+[![Build Status Azure](https://dev.azure.com/neylsoncrepalde/deflateBR/_apis/build/status/neylsoncrepalde.deflatebr?branchName=master)](https://dev.azure.com/neylsoncrepalde/deflateBR/_build/latest?definitionId=1&branchName=master)
+[![Build Status Travis](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/neylsoncrepalde/deflatebr/badge.svg?branch=master)](https://coveralls.io/github/neylsoncrepalde/deflatebr?branch=master)
 
 [![PyPi downloads](https://pypip.in/d/deflateBR/badge.png)](https://crate.io/packages/deflateBR/)
@@ -61,6 +61,17 @@ dbr.deflate(nominal_values=df.nom_values, nominal_dates=df.dates,
             real_date='2020-01')
 ```
     array([131.32029183, 259.42387232, 365.99132289, 479.18030761])
+
+
+To display a **progress bar**, set `progress_bar=True`. If you are running on a jupyter notebook or a jupyter lab, set also `on_jupyter=True` to have a nice HTML progress bar: 
+
+```python
+dbr.deflate(nominal_values=df.nom_values, nominal_dates=df.dates, 
+            real_date='2020-01', progress_bar=True, on_jupyter=False)
+```
+    100%|██████████████████████████████| 6/6 [00:00<00:00, 3006.67it/s] 
+    array([1084.40219182, 1192.842411  , 1247.06252059, 1053.40923236,
+       1264.09107883, 1316.76154045])
 
 
 Behind the scenes, `deflateBR` requests data from
