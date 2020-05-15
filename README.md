@@ -7,6 +7,7 @@ deflateBR
 [![Build Status Azure](https://dev.azure.com/neylsoncrepalde/deflateBR/_apis/build/status/neylsoncrepalde.deflatebr?branchName=master)](https://dev.azure.com/neylsoncrepalde/deflateBR/_build/latest?definitionId=1&branchName=master)
 [![Build Status Travis](https://travis-ci.org/neylsoncrepalde/deflatebr.svg?branch=master)](https://travis-ci.org/neylsoncrepalde/deflatebr?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/neylsoncrepalde/deflatebr/badge.svg?branch=master)](https://coveralls.io/github/neylsoncrepalde/deflatebr?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/deflatebr/badge/?version=latest)](https://deflatebr.readthedocs.io/en/latest/?badge=latest)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3f38c77f8e5c4d02bbb8befd3cdb9489)](https://www.codacy.com/manual/neylsoncrepalde/deflatebr?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=neylsoncrepalde/deflatebr&amp;utm_campaign=Badge_Grade)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/deflateBR.svg)](https://pypi.python.org/pypi/deflateBR/)
